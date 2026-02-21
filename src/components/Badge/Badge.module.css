@@ -1,0 +1,40 @@
+.badge {
+	width: fit-content;
+	border-radius: 20px;
+	padding: 3px 10px;
+	color: var(--text-color);
+	text-transform: capitalize;
+	font-weight: 500;
+	font-size: 14px;
+	background-color: #c5baff;
+}
+
+.primary {
+	background-color: rgba(59, 130, 246, 0.12);
+	border: 1px solid rgba(59, 130, 246, 0.35);
+	color: inherit;
+}
+
+.success {
+	background-color: rgba(34, 197, 94, 0.12);
+	border: 1px solid rgba(34, 197, 94, 0.35);
+	color: inherit;
+}
+
+.warning {
+	background-color: rgba(245, 158, 11, 0.12);
+	border: 1px solid rgba(245, 158, 11, 0.35);
+	color: inherit;
+}
+
+.alert {
+	background-color: rgba(239, 68, 68, 0.12);
+	border: 1px solid rgba(239, 68, 68, 0.35);
+	color: inherit;
+}
+
+.danger {
+	background-color: rgba(153, 27, 27, 0.18);    
+	border: 1px solid rgba(220, 38, 38, 0.65);
+	color: #dc2626;
+}

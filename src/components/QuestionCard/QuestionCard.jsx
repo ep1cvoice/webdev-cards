@@ -1,12 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
-import QuestionCardList from '../QuestionCardList';
+import Badge from '../Badge';
+
 import JSLogo from '../../assets/javascript-logo.svg';
 import ReactLogo from '../../assets/react.svg';
 import AngularLogo from '../../assets/angular-logo.svg';
 import VueLogo from '../../assets/vue-logo.png';
 import NodeLogo from '../../assets/nodejs-icon.svg';
 
+import { Check } from 'lucide-react';
 import styles from './QuestionCard.module.css';
 
 const QuestionCard = ({ card }) => {
@@ -20,15 +22,30 @@ const QuestionCard = ({ card }) => {
 		node: NodeLogo,
 	};
 
+	const levelMap = {
+		1: 'primary',
+		2: 'warning',
+		3: 'alert',
+		4: 'danger',
+	};
+
+	const levelOption = levelMap[Number(card.level)] || 'primary';
+
+	const completedOption = card.completed ? 'success' : 'primary';
+
 	return (
 		<div className={styles.card}>
 			<div className={styles.cardLabels}>
 				<div className={styles.leftSide}>
-					<div>Level: {card.level}</div>
-					<div>{card.completed ? 'Completed' : 'Not Completed'}</div>
+					<Badge option={levelOption}>
+						<div>Level: {card.level}</div>
+					</Badge>
+					<Badge option={completedOption}>
+						<div>{card.completed ? 'Completed' : 'Not Completed'}</div>
+					</Badge>
 				</div>
 
-				<img src={categoryIcons[card.category]} alt={`${card.category} logo`} />
+				<img src={categoryIcons[card.category]} alt={`${card.category}`} />
 			</div>
 
 			<h5 className={styles.cardTitle}>{card.question}</h5>
