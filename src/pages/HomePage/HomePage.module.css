@@ -1,90 +1,123 @@
 .controlsContainer {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 30px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 30px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
 }
 
 .noCardsWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 80px 20px;
 }
 
+
 .selectGroup {
-    display: flex;
-    gap: 10px;
+	display: flex;
+	gap: 10px;
 }
 
 .selectGroup .select {
-    flex: 1;
-    min-width: 0;
+	flex: 1;
+	min-width: 0;
 }
 
 .noCards {
-    text-align: center;
-    padding: 40px 50px;
-    border-radius: 24px;
-    background: var(--card-bg-color);
-    border: 1px solid var(--btn-bg-color);
-    animation: float 4s ease-in-out infinite;
-    max-width: 420px;
+	text-align: center;
+	padding: 40px 50px;
+	border-radius: 24px;
+	background: var(--card-bg-color);
+	border: 1px solid var(--btn-bg-color);
+	animation: float 4s ease-in-out infinite;
+	max-width: 420px;
 }
 
 .icon {
-    font-size: 48px;
-    margin-bottom: 20px;
+	font-size: 48px;
+	margin-bottom: 20px;
 }
 
 .noCards h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-color);
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 8px;
+	color: var(--text-color);
 }
 
 .noCards p {
-    font-size: 15px;
-    color: var(--text-color);
+	font-size: 15px;
+	color: var(--text-color);
 }
 
 .select {
-    height: 40px;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color: var(--card-bg-color);
-    color: var(--text-color);
+	height: 40px;
+	padding: 5px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	background-color: var(--card-bg-color);
+	color: var(--text-color);
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.pageButton {
+	padding: 8px 14px;
+	border: none;
+	background: var(--btn-bg-color);
+	border-radius: 6px;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.pageButton:hover {
+	background: var(--btn-hover-bg);
+}
+
+.active {
+	background: #4f46e5;
+	color: var(--text-color);
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0px); }
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 
 @media (max-width: 576px) {
-    .controlsContainer {
-        flex-direction: column-reverse;
-        align-items: stretch;
-        gap: 12px;
-    }
+	.controlsContainer {
+		flex-direction: column-reverse;
+		align-items: stretch;
+		gap: 12px;
+	}
 
-    .selectGroup {
-        width: 100%;
-    }
+	.selectGroup {
+		width: 100%;
+	}
 
-    .selectGroup .select {
-        flex: 1;
-    }
+	.selectGroup .select {
+		flex: 1;
+	}
 
-    .controlsContainer > :first-child {
-        width: 100%;
-    }
+	.controlsContainer > :first-child {
+		width: 100%;
+	}
 }
