@@ -2,6 +2,8 @@ import { useActionState, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import QuestionForm from '../../components/QuestionForm';
 import { dateFormat } from '../../helpers/dateFormat';
+import { useFetch } from '../../hooks/useFetch';
+import { X } from 'lucide-react';
 import { API_URL } from '../../constants';
 
 import styles from './EditQuestionPage.module.css';
@@ -31,7 +33,9 @@ const editCardAction = async (_prevState, formData) => {
 			level: Number(newQuestion.level),
 			answer: newQuestion.answer.trim(),
 			description: newQuestion.description.trim(),
-			resources: newQuestion.resources.length ? resources.split(',').map((r) => r.trim()) : [],
+			resources: newQuestion.resources.length
+				? resources.split(',').map((r) => r.trim())
+				: [],
 			editDate: dateFormat(new Date()),
 		});
 
@@ -62,12 +66,32 @@ const EditQuestion = ({ initialState = {} }) => {
 		formAction(e);
 	};
 
+	const [removeQuestion, isQuestionRemoving] = useFetch(async () => {
+		await fetch(`${API_URL}/checkycards/${initialState.id}`, {
+			method: 'DELETE',
+		});
+
+		navigate('/');
+	});
+
 	return (
 		<>
 			<h1 className={styles.formTitle}>Edit card</h1>
 
 			<div className={styles.formContainer}>
-				<QuestionForm formAction={handleSubmit} formState={formState} submitBtnText='Edit Card' />
+				<QuestionForm
+					formAction={handleSubmit}
+					formState={formState}
+					submitBtnText="Edit Card"
+				/>
+
+				<button
+					className={styles.deleteBtn}
+					onClick={removeQuestion}
+					disabled={isQuestionRemoving}
+				>
+					<X />
+				</button>
 			</div>
 		</>
 	);

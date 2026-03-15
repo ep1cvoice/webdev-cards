@@ -10,7 +10,32 @@
 	border-radius: 10px;
 	background-color: var(--card-bg-color);
 	box-shadow: var(--shadow);
-    position: relative;
+	position: relative;
 }
 
+.topContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.deleteBtn {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	border: none;
+	border-radius: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--btn-text-color);
+	background-color: #d84040;
+	cursor: pointer;
+	transition: background-color .2s;
+}
+.deleteBtn:hover {
+	background-color: #b63636;
+}
