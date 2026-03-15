@@ -140,7 +140,7 @@ const QuestionPage = () => {
 				</label>
 
 				<div className={styles.buttonsContainer}>
-					<Button onClick={() => navigate(`/`)} isDisabled={isCardUpdating}>
+					<Button onClick={() => navigate(-1)} isDisabled={isCardUpdating}>
 						{' '}
 						<ArrowLeft size={18} /> Go Back{' '}
 					</Button>
