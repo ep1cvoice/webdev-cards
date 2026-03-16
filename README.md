@@ -1,52 +1,59 @@
-# JS Checky Cards
+# WebDev Cards
 
-**JS Checky Cards** is a Single Page Application built with **React + Vite**.
+**WebDev Cards** is a Single Page Application built with **React + Vite + JSON server**.
 
-The main purpose of this project for me is to deeply understand and practice core React concepts by building a real-world, feature-rich learning application.
+The goal of this project is to practice and deepen understanding of core React concepts by building a practical, feature-rich learning application.
 
-It allows users to create, manage, and review knowledge cards related to programming concepts — primarily React, as part of my learning journey — but also other JavaScript-based technologies.
+It allows users to create, manage, and review knowledge cards related to modern web development technologies.
 
 ![App Preview Desktop](./src/assets/preview/preview-desktop.png)
 
-## 📚 Project Purpose
+---
 
-This application is built as part of my learning React.
+# Project Purpose
 
-The primary goals are:
+This project was created as part of my path of learning and practicing React development.
 
-- Practice core React concepts in a real-world scenario
-- Build a scalable SPA architecture
-- Manage state effectively
+The main objectives are:
+
+- Practice React in a real project environment
+- Build a scalable Single Page Application architecture
+- Improve state management patterns
 - Implement authentication and protected routes
 - Work with forms, pagination, and filtering
-- Apply best practices in component design
+- Apply clean component design and separation of concerns
 
-Although most default content focuses on React concepts, users can freely create and manage their own cards.
+Although the application contains default development-related cards, users can freely create and manage their own knowledge cards.
 
-## 🧠 Main Idea
+*This project is also designed as a personal learning tool. I actively use this application to organize and review knowledge related to web development. By regularly creating and revisiting cards, the goal is to reinforce important concepts and build a structured knowledge base for my everyday development work.*
 
-JS Checky Cards is a card-style future developer knowledge manager.
+---
+
+# Main Idea
+
+WebDevCards is a knowledge management tool designed for developers who want to organize and review important concepts from different web technologies.
 
 Each card contains:
 
-- **Title**
-- **Category (Vanilla JS, React, Node.js etc.)**
-- **Short Description**
-- **Extended Description**
-- **Example Usage**
-- **Knowledge Status** (Completed / Not completed)
+- Title
+- Category (HTML, CSS, JavaScript, React, Angular, Vue, Node.js, Next)
+- Short Description
+- Extended Description
+- Exampel of using or code example (not done yet)
+- Links
+- Knowledge Status (Completed / Not completed)
 
 Users can:
 
-- ➕ Create cards  
-- ✏️ Edit cards  
-- ❌ Delete cards  
-- 🔁 Mark as completed / not completed
-- 🔎 Filter by category
-- 📄 Navigate through paginated results  
-- 🌗 Use automatic Dark / Light mode
+- Create cards
+- Edit cards
+- Delete cards
+- Mark cards as completed or not completed
+- Filter cards by category
+- Navigate through paginated results
+- Use automatic light / dark theme detection
 
-## ⚙️ How to run
+## How to run
 1. Install dependencies
 ```bash
 npm install
@@ -60,28 +67,31 @@ npm run server
 npm run dev
 ```
 
-## 📦 Backend (JSON Server)
+## Backend (JSON Server)
 
 The project uses JSON Server as a mock REST API.
 
-- Contains 60 React-related questions
+- Contains predefined development-related cards
 - Data is loaded dynamically after server startup
-- Simulates real backend behavior
+- Simulates real backend behavior for development purposes
 
 
-## ⚙️ Supported Technologies (Categories)
+## Supported Technologies (Categories)
 
 Currently supported categories:
 
+- HTML
+- CSS
 - JavaScript
 - React
 - Angular
 - Vue
 - Node.js
+- Next.js
 
-The application is React-focused, but users can create cards for any supported category.
+Users can create cards for any of these technologies.
 
-## 🔐 Core Features
+## Core Features
 
 ### Card Management (CRUD)
 
@@ -101,13 +111,35 @@ The application is React-focused, but users can create cards for any supported c
 - Filter by selected technology
 - Display only relevant concepts
 
-### 🌗 Dark / Light Mode
+### Search
 
-- Automatic theme detection (based on system preferences)
-- Optional manual theme switch (Light / Dark)
-- Persistent theme selection
+- Search cards by keywords
+- Quickly locate specific concepts or topics
+- Filters results dynamically while typing
 
-## ⚛ React Concepts Practiced
+### Sorting
+
+- Sort cards by completion status
+- Sort completed and not completed cards
+- Flexible ordering to quickly review unfinished topics
+
+### Theme Support
+
+- Automatic theme detection based on system preferences
+- Dark or light mode applied automatically
+- Manual theme switch planned for a future update
+
+## Upcoming Improvements
+
+The following features are planned for future updates:
+
+- Manual light / dark theme switch
+- Theme preference stored in localStorage
+- Example usage field inside cards
+- Predefined learning card set covering HTML, CSS, JavaScript and React
+- Option to remove all predefined cards and start with an empty collection
+
+## React Concepts Practiced
 
 This project is designed to cover and reinforce:
 
@@ -127,7 +159,7 @@ This project is designed to cover and reinforce:
 - Form Validation
 - Performance Optimization (memo, useCallback, useMemo)
 
-## 🏗 Architecture Overview
+## Architecture Overview
 
 - Single Page Application (SPA)
 - Modular component structure
@@ -136,14 +168,26 @@ This project is designed to cover and reinforce:
 - Organized folder structure
 
 
-## 🎯 Learning Goals
+## Learning Goals
 
-JS Checky Cards is about:
+WebDev Cards  is about:
 
 - Understanding how React works internally
 - Building scalable frontend architecture
 - Practicing state management patterns
 - Gaining confidence with real-world SPA development
 - Writing clean and maintainable code
+- Use app for myself in everyday-learning dev process
+
+## Screenshots presenting UI and responsiveness
 
 
+### Desktop dark theme
+![App Preview Desktop](./src/assets/preview/card-page.png)
+![App Preview Desktop](./src/assets/preview/edit-card.png)
+
+---
+
+### Mobile light theme
+![App Preview Desktop](./src/assets/preview/preview.png)
+![App Preview Desktop](./src/assets/preview/preview2.png)

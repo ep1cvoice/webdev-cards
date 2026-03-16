@@ -1,20 +1,6 @@
 {
   "checkycards": [
     {
-      "id": "1",
-      "category": "react",
-      "question": "Czym jest React?",
-      "answer": "React to JS biblioteka do tworzenia interfejsów użytkownika.",
-      "description": "React to biblioteka JavaScript opracowana przez Facebook, która jest używana do budowania interfejsów użytkownika w oparciu o podejście komponentowe. React pozwala tworzyć interfejsy użytkownika z oddzielnych części nazywanych komponentami.",
-      "resources": [
-        "https://react.dev",
-        "https://react.dev/reference/react"
-      ],
-      "level": 1,
-      "completed": true,
-      "editDate": "15.03.2026, 18:28"
-    },
-    {
       "id": "2",
       "category": "react",
       "question": "Czym jest JSX?",

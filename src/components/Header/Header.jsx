@@ -99,7 +99,7 @@ const Header = () => {
 				<div className={styles.rightSide}>
 					<div className={styles.brand} onClick={() => navigate('/')}>
 						<TagLogo className={`${styles.headerIcon} ${styles.tagIcon}`} />
-						<span>JS Checky Cards</span>
+						<span>WebDev Cards</span>
 					</div>
 
 					<div className={styles.headerButtons}>
