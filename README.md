@@ -6,9 +6,7 @@ The goal of this project is to practice and deepen understanding of core React c
 
 It allows users to create, manage, and review knowledge cards related to modern web development technologies.
 
-![App Preview Desktop](./src/assets/preview/preview-desktop.png)
-
----
+## ![App Preview Desktop](./src/assets/preview/image.png)
 
 # Project Purpose
 
@@ -25,7 +23,7 @@ The main objectives are:
 
 Although the application contains default development-related cards, users can freely create and manage their own knowledge cards.
 
-*This project is also designed as a personal learning tool. I actively use this application to organize and review knowledge related to web development. By regularly creating and revisiting cards, the goal is to reinforce important concepts and build a structured knowledge base for my everyday development work.*
+_This project is also designed as a personal learning tool. I actively use this application to organize and review knowledge related to web development. By regularly creating and revisiting cards, the goal is to reinforce important concepts and build a structured knowledge base for my everyday development work._
 
 ---
 
@@ -54,15 +52,21 @@ Users can:
 - Use automatic light / dark theme detection
 
 ## How to run
+
 1. Install dependencies
+
 ```bash
 npm install
 ```
+
 2. Start JSON Server (mock backend)
+
 ```bash
 npm run server
 ```
+
 3. Start the frontend (in a separate terminal! ⚠️)
+
 ```bash
 npm run dev
 ```
@@ -74,7 +78,6 @@ The project uses JSON Server as a mock REST API.
 - Contains predefined development-related cards
 - Data is loaded dynamically after server startup
 - Simulates real backend behavior for development purposes
-
 
 ## Supported Technologies (Categories)
 
@@ -167,10 +170,9 @@ This project is designed to cover and reinforce:
 - Clear separation of concerns
 - Organized folder structure
 
-
 ## Learning Goals
 
-WebDev Cards  is about:
+WebDev Cards is about:
 
 - Understanding how React works internally
 - Building scalable frontend architecture
@@ -181,13 +183,14 @@ WebDev Cards  is about:
 
 ## Screenshots presenting UI and responsiveness
 
-
 ### Desktop dark theme
+
 ![App Preview Desktop](./src/assets/preview/card-page.png)
 ![App Preview Desktop](./src/assets/preview/edit-card.png)
 
 ---
 
 ### Mobile light theme
+
 ![App Preview Desktop](./src/assets/preview/preview.png)
 ![App Preview Desktop](./src/assets/preview/preview2.png)
