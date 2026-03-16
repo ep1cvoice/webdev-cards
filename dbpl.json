@@ -17,7 +17,7 @@
     {
       "id": "2",
       "category": "react",
-      "question": "Czym jest JSX? :)",
+      "question": "Czym jest JSX?",
       "answer": "JSX to rozszerzenie składni JavaScript dla Reacta.",
       "description": "JSX pozwala pisać kod podobny do HTML w JavaScript, który następnie jest transpilowany do wywołań `React.createElement`. Ułatwia to tworzenie i wizualne przedstawienie struktury komponentów.",
       "resources": [
@@ -85,18 +85,6 @@
       "description": "`useState` zwraca tablicę złożoną z dwóch elementów: bieżącej wartości stanu oraz funkcji do jego aktualizacji. Służy do przechowywania i zmiany danych w komponentach.",
       "resources": [
         "https://react.dev/reference/react/useState"
-      ],
-      "level": 2,
-      "completed": true
-    },
-    {
-      "id": "8",
-      "category": "react",
-      "question": "Czym jest useEffect?",
-      "answer": "useEffect to hook do zarządzania efektami ubocznymi.",
-      "description": "Hook `useEffect` pozwala wykonywać efekty uboczne, takie jak zapytania do API, subskrypcje oraz manipulacje na DOM. Jest wywoływany po renderowaniu i może zależeć od określonych wartości.",
-      "resources": [
-        "https://react.dev/reference/react/useEffect"
       ],
       "level": 2,
       "completed": true

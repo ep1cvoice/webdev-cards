@@ -1,32 +1,41 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet, Navigate, useLocation } from 'react-router-dom';
+import AuthProvider from '../auth/authProvider/AuthProvider';
 import MainLayout from './MainLayout';
 import HomePage from '../pages/HomePage';
 import QuestionPage from '../pages/QuestionPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import AddQuestionPage from '../pages/AddQuestionPage';
 import EditQuestionPage from '../pages/EditQuestionPage';
+import ForbiddenPage from '../pages/ForbiddenPage/ForbiddenPage';
+import useAuth from '../hooks/useAuth';
+
+const ProtectedRoute = () => {
+	const { isAuth } = useAuth();
+	const location = useLocation();
+
+	return isAuth ? <Outlet /> : <Navigate to='/forbidden' state={{ from: location }} replace />;
+};
 
 function App() {
 	return (
-		<>
+		<AuthProvider>
 			<BrowserRouter>
 				<Routes>
 					<Route element={<MainLayout />}>
-						<Route path='/' element={<HomePage />}></Route>
+						<Route path='/' element={<HomePage />} />
 
-						<Route path='/addquestion' element={<AddQuestionPage />}></Route>
+						<Route element={<ProtectedRoute />}>
+							<Route path='/addquestion' element={<AddQuestionPage />} />
+							<Route path='/editquestion/:id' element={<EditQuestionPage />} />
+						</Route>
 
-						<Route path='/question/:id' element={<QuestionPage />}></Route>
-
-						<Route path='/editquestion/:id' element={<EditQuestionPage />}></Route>
-
-						<Route path='/forbidden' element={<div>Forbidden</div>}></Route>
-
-						<Route path='*' element={<NotFoundPage />}></Route>
+						<Route path='/question/:id' element={<QuestionPage />} />
+						<Route path='/forbidden' element={<ForbiddenPage />} />
+						<Route path='*' element={<NotFoundPage />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>
-		</>
+		</AuthProvider>
 	);
 }
 

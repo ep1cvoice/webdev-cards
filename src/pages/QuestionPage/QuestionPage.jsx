@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useId, useState } from 'react';
 import { useFetch } from '../../hooks/useFetch';
+import { useAuth } from '../../hooks/useAuth';
 import { API_URL } from '../../constants';
 
 import Button from '../../components/Button';
@@ -19,6 +20,7 @@ import styles from './QuestionPage.module.css';
 
 const QuestionPage = () => {
 	const navigate = useNavigate();
+	const { isAuth } = useAuth();
 
 	const checkboxId = useId();
 	const { id } = useParams();
@@ -38,9 +40,9 @@ const QuestionPage = () => {
 		const response = await fetch(`${API_URL}/checkycards/${card.id}`, {
 			method: 'PATCH',
 			headers: {
-			'Content-Type': 'application/json',
-		},
-			body: JSON.stringify({completed: isChecked}),
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ completed: isChecked }),
 		});
 
 		const data = await response.json();
@@ -64,7 +66,7 @@ const QuestionPage = () => {
 
 	const onCheckBoxChangeHandler = () => {
 		setIsChecked(!isChecked);
-		updateCard(!isChecked)
+		updateCard(!isChecked);
 	};
 
 	const categoryIcons = {
@@ -144,9 +146,13 @@ const QuestionPage = () => {
 						{' '}
 						<ArrowLeft size={18} /> Go Back{' '}
 					</Button>
-					<Button onClick={() => navigate(`/editquestion/${card.id}`)} isDisabled={isCardUpdating}>
-						<Pencil size={18} /> Edit Card{' '}
-					</Button>
+					{isAuth ? (
+						<Button onClick={() => navigate(`/editquestion/${card.id}`)} isDisabled={isCardUpdating}>
+							<Pencil size={18} /> Edit Card{' '}
+						</Button>
+					) : (
+						''
+					)}
 				</div>
 			</div>
 		</>

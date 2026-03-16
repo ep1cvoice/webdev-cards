@@ -10,7 +10,7 @@
 	font-size: 1em;
 	font-family: inherit;
 	cursor: pointer;
-	transition: background-color .3s ease;
+	transition: background-color 0.3s ease;
 	gap: 5px;
 }
 .button:hover {
@@ -29,4 +29,15 @@
 .active {
 	color: black;
 	background-color: #ce7e1d;
+}
+.active:hover {
+	background-color: #a36418;
+}
+
+.neutral {
+	color: var(--btn-text-color);
+	background-color: var(--color-green);
+}
+.neutral:hover {
+	background-color: #155e4b;
 }

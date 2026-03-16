@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
+import { AUTH_STORAGE } from '../../constants';
+
 import Button from '../Button';
 
 import htmlLogo from '../../assets/HTML5.png';
@@ -18,6 +21,9 @@ import styles from './Header.module.css';
 
 const Header = () => {
 	const navigate = useNavigate();
+	const { isAuth, setIsAuth } = useAuth();
+
+	console.log('isAuth', isAuth);
 
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -32,6 +38,11 @@ const Header = () => {
 
 	const [searchParams] = useSearchParams();
 	const activeTechnology = searchParams.get('technology');
+
+	const loginHandler = () => {
+		localStorage.setItem(AUTH_STORAGE, !isAuth)
+		setIsAuth(!isAuth);
+	};
 
 	return (
 		<>
@@ -92,14 +103,16 @@ const Header = () => {
 					</div>
 
 					<div className={styles.headerButtons}>
-						<Button onClick={() => navigate('/addquestion')} isDisabled={false}>
-							<Plus size={18} />
-							Add{' '}
-						</Button>
-						<Button>
-							{' '}
-							<LogIn size={18} />
-							Log In
+						{isAuth ? (
+							<Button onClick={() => navigate('/addquestion')} isDisabled={false} isNeutral={true}>
+								<Plus size={18} /> Add New Card{' '}
+							</Button>
+						) : (
+							''
+						)}
+						<Button onClick={loginHandler} isActive={!isAuth}>
+							<LogIn size={18} i />
+							{isAuth ? 'Log Out' : 'Log In'}
 						</Button>
 					</div>
 				</div>
@@ -149,12 +162,16 @@ const Header = () => {
 					<span>Next.js</span>
 				</div>
 
-				<Button onClick={() => navigate('/addquestion')} isDisabled={false}>
-					<Plus size={16} /> Add{' '}
-				</Button>
-				<Button>
+				{isAuth ? (
+					<Button onClick={() => navigate('/addquestion')} isNeutral={true} isDisabled={false}>
+						<Plus size={16} /> Add New Card{' '}
+					</Button>
+				) : (
+					''
+				)}
+				<Button onClick={loginHandler} isActive={!isAuth}>
 					<LogIn size={16} />
-					Log In
+					{isAuth ? 'Log Out' : 'Log In'}
 				</Button>
 			</div>
 		</>

@@ -139,8 +139,8 @@ const HomePage = () => {
 				<div className={styles.noCardsWrapper}>
 					<div className={styles.noCards}>
 						<div className={styles.icon}>🔍</div>
-						<h3>There is no cards here</h3>
-						<p>Create your first card using Add Button</p>
+						<h3>Nothing to see here yet</h3>
+						<p>Create your first card using + Add Button</p>
 					</div>
 				</div>
 			)}

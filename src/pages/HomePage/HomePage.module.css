@@ -33,7 +33,6 @@
 	border-radius: 24px;
 	background: var(--card-bg-color);
 	border: 1px solid var(--btn-bg-color);
-	animation: float 4s ease-in-out infinite;
 	max-width: 420px;
 }
 
@@ -75,7 +74,7 @@
 .pageButton {
 	padding: 8px 14px;
 	border: none;
-	background: var(--btn-bg-color);
+	background: var(--card-bg-color);
 	border-radius: 6px;
 	cursor: pointer;
 	transition: 0.2s;
@@ -86,21 +85,10 @@
 }
 
 .active {
-	background: #4f46e5;
+	background: var(--color-green);
 	color: var(--text-color);
 }
 
-@keyframes float {
-	0% {
-		transform: translateY(0px);
-	}
-	50% {
-		transform: translateY(-6px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
-}
 
 @media (max-width: 576px) {
 	.controlsContainer {
