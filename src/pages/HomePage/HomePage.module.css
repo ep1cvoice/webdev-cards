@@ -32,7 +32,7 @@
 	padding: 40px 50px;
 	border-radius: 24px;
 	background: var(--card-bg-color);
-	border: 1px solid var(--btn-bg-color);
+	border: 1px solid var(--border-color);
 	max-width: 420px;
 }
 
@@ -74,6 +74,7 @@
 .pageButton {
 	padding: 8px 14px;
 	border: none;
+	color: var(--text-color);
 	background: var(--card-bg-color);
 	border-radius: 6px;
 	cursor: pointer;

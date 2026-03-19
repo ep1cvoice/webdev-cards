@@ -1,42 +1,51 @@
 .mainLayout {
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 0;
+	height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	gap: 0;
 }
 
 .mainWrapper {
-    height: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 20px;
-    overflow-y: auto;
+	height: 100%;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 20px;
+	overflow-y: auto;
 }
 
 .main {
-    padding: 0 20px;;
+	padding: 0 20px;
 }
 
 .footer {
-    width: 100%;
-    padding: 15px 10px;
-    background-color: transparent;
-    text-align: center;
-    font-size: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    color: var(--text-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 15px 10px;
+	background-color: transparent;
+	text-align: center;
+	font-size: 15px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--header-footer-bg);
+	border-top: 1px solid var(--border-color);
+	color: var(--text-color);
+	gap: 10px;
+}
+
+.hollowKnightIcon {
+	width: 30px;
+	height: 30px;
 }
 
 @media (prefers-color-scheme: dark) {
-
 	.footer {
 		border-top: 1px solid rgba(255, 255, 255, 0.08);
 	}

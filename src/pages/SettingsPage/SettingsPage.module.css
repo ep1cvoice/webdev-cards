@@ -1,28 +1,103 @@
-.formTitle {
-	margin: 25px auto;
-	width: fit-content;
-}
-
 .formContainer {
 	width: 100%;
 	max-width: 600px;
 	margin: 0 auto;
-	border-radius: 10px;
+	border-radius: 12px;
+	margin-top: 50px;
 	background-color: var(--card-bg-color);
 	box-shadow: var(--shadow);
+	padding: 10px;
 }
 
 .section {
-	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	margin-top: 15px;
 	padding: 20px;
-	margin-top: 20px;
+	border-radius: 16px;
 	background-color: var(--card-bg-color);
-	border-radius: 25px;
+	border: 1px solid var(--border-color);
+	transition: 0.2s;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.containerRight {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
 }
 
 .infoTitle {
 	font-size: 16px;
 	font-weight: 600;
-	color: #bbb;
+	color: var(--text-color);
+}
+
+.subText {
+	font-size: 13px;
+	color: #777;
+}
+
+.modeSelector {
+	display: flex;
+	gap: 10px;
+	margin-top: 15px;
+}
+
+.modeSelector button {
+	flex: 1;
+	padding: 10px;
+	border-radius: 12px;
+	border: 1px solid transparent;
+	background: var(--btn-bg-color);
+	color: var(--btn-text-color);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.modeSelector button:hover {
+	background: var(--btn-hover-bg);
+	color: var(--btn-text-color);
+}
+
+.active {
+	background: var(--color-green) !important;
+	color: #fff !important;
+}
+
+.topContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	padding: 0 10px;
+}
+
+.infoTitle {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text-color);
 	margin-bottom: 6px;
+}
+
+.section :global(.react-switch-disabled) {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+	.row {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.modeSelector {
+		flex-direction: column;
+	}
 }

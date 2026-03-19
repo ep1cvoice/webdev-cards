@@ -158,9 +158,14 @@ const Header = () => {
 				</div>
 
 				{isAuth ? (
-					<Button onClick={() => navigate('/addquestion')} isNeutral={true} isDisabled={false}>
-						<Plus size={16} /> Add New Card{' '}
-					</Button>
+					<>
+						<Button onClick={() => navigate('/addquestion')} isNeutral={true} isDisabled={false}>
+							<Plus size={16} /> Add New Card{' '}
+						</Button>
+						<Button onClick={() => navigate('/settings')}>
+							<Settings size={16} /> Settings{' '}
+						</Button>
+					</>
 				) : (
 					''
 				)}

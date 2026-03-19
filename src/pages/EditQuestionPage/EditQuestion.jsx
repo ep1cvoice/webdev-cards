@@ -2,6 +2,7 @@ import { useActionState, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import QuestionForm from '../../components/QuestionForm';
 import MarkdownRenderer from '../../components/MarkdownRenderer';
+import Button from '../../components/Button';
 import { dateFormat } from '../../helpers/dateFormat';
 import { useFetch } from '../../hooks/useFetch';
 import { Info, X, ArrowLeft } from 'lucide-react';
@@ -85,10 +86,11 @@ const EditQuestion = ({ initialState = {} }) => {
 			<div className={styles.formContainer}>
 				<div className={styles.topContainer}>
 					<div className={styles.topContainerLeft}>
-						<button className={styles.goBackBtn} onClick={() => navigate((-1))} disabled={isQuestionRemoving}>
-							<ArrowLeft />
-						</button>
-						<h1 className={styles.formTitle}>Edit card</h1>
+						<Button onClick={() => navigate(-1)} >
+						{' '}
+						<ArrowLeft size={18} /> Go Back{' '}
+					</Button>
+						<h1 className={styles.formTitle}>Edit</h1>
 					</div>
 					<div className={styles.topContainerRight}>
 						<button className={styles.infoBtn} onClick={() => setIsModalOpen(true)}>
