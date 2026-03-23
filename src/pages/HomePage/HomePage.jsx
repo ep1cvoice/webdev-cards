@@ -74,9 +74,9 @@ const HomePage = () => {
 			const params = new URLSearchParams(prev);
 
 			if (value) {
-				params.set('technology', value);
+				params.set('q', value);
 			} else {
-				params.delete('technology');
+				params.delete('q');
 			}
 
 			params.set('page', 1);
@@ -141,6 +141,8 @@ const HomePage = () => {
 								}
 
 								params.set('page', 1);
+
+								return params;
 							});
 						}}
 						className={styles.select}>
