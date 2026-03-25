@@ -123,7 +123,7 @@ const QuestionPage = () => {
 
 				<ul className={styles.cardLinks}>
 					Links:
-					{card.resources.map((link, index) => {
+					{card.resources?.map((link, index) => {
 						return (
 							<li key={index}>
 								<a href={link.trim()} target='_blank' rel='noreferrer'>
