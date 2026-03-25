@@ -11,8 +11,11 @@ import ReactLogo from '../../assets/react.svg';
 import TSLogo from '../../assets/typescript_logo.png';
 import GitHubLogo from '../../assets/github_logo.png';
 import InternetLogo from '../../assets/internet_logo.png';
+import NextLogo from '../../assets/nextjs-icon.svg';
+import NodeLogo from '../../assets/nodejs-icon.svg';
+import OtherLogo from '../../assets/menu.png';
 
-import { Expand } from 'lucide-react';
+import { Star, Expand, Check } from 'lucide-react';
 import styles from './QuestionCard.module.css';
 
 const QuestionCard = ({ card }) => {
@@ -27,6 +30,9 @@ const QuestionCard = ({ card }) => {
 		typescript: TSLogo,
 		git: GitHubLogo,
 		web: InternetLogo,
+		node: NodeLogo,
+		next: NextLogo,
+		other: OtherLogo,
 	};
 
 	const levelMap = {
@@ -37,8 +43,8 @@ const QuestionCard = ({ card }) => {
 	};
 
 	const levelOption = levelMap[Number(card.level)] || 'primary';
-
 	const completedOption = card.completed ? 'success' : 'primary';
+	const priority = Math.min(Math.max(card.priority ?? 0, 0), 4);
 
 	const { revealMode } = useRevealAnswer();
 	const [showAnswer, setShowAnswer] = useState(false);
@@ -52,7 +58,16 @@ const QuestionCard = ({ card }) => {
 						<div>Level: {card.level}</div>
 					</Badge>
 					<Badge option={completedOption}>
-						<div>{card.completed ? 'Completed' : 'Not Completed'}</div>
+						<div className={styles.completionBadge}>
+							{card.completed ? (
+								<>
+									<Check size={20}/>
+									Completed
+								</>
+							) : (
+								'Not Completed'
+							)}
+						</div>
 					</Badge>
 				</div>
 
@@ -90,10 +105,17 @@ const QuestionCard = ({ card }) => {
 				</p>
 			</div>
 
-			<Button onClick={() => navigate(`/question/${card.id}${location.search}`)}>
-				{' '}
-				View <Expand size={18} />
-			</Button>
+			<div className={styles.cardFooter}>
+				<div className={styles.priority} data-priority={priority}>
+					<span className={styles.priorityText}>Priority: {priority}</span>
+					<Star className={styles.priorityIcon} />
+				</div>
+
+				<Button onClick={() => navigate(`/question/${card.id}${location.search}`)}>
+					{' '}
+					View <Expand size={18} />
+				</Button>
+			</div>
 		</div>
 	);
 };
